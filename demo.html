@@ -42,8 +42,8 @@
 
         <ul class="demo-body__list">
           <li>
-            <h2>slickNav.js 적용 전 기본 네비게이션</h2>
-            <p>웹 접근성을 고려한 play/pause 버튼 및 UI가 제공되지 않는 불편함이 있습니다.</p>
+            <h2>slickNav.js 적용 전</h2>
+            <p>웹 접근성을 고려한 play/pause 버튼 및 네비게이션의 UI가 제공되지 않습니다.</p>
 
             <div class="slick-default">
               <div class="item">
@@ -80,10 +80,16 @@
           </li>
 
           <li>
-            <h2>slickNav.js 옵션</h2>
-            <p>slickNav.js 에서 사용가능한 전체 옵션입니다.</p>
+            <h2>사용방법</h2>
+            <h3 class="demo__pre-type">HTML</h3>
+<pre><code class="html">
+  &lt;!-- import slickNav.js --&gt;
+  &lt;script defer src="/js/slickNav.js"&gt;&lt;/script&gt;
+
+</code></pre>
             <h3 class="demo__pre-type">Javascript</h3>
 <pre><code class="javascript">
+  // 전체 옵션
   $('.slick-nav').slickNav('.item', { // 실제 slide 되는 Node를 select
     circle: false, // [Circle 애니메이션 사용 유무] 기본값 : false. 아래 속성을 이용해 간단한 스타일 제어   * false 시 Dot만 출력
     circleSize: '32px', // [Circle 사이즈] 기본값 : 30px
@@ -94,7 +100,7 @@
     progressWidth: '150px', // [프로그레스 바 width] 기본값 : 150px 
     progressHeight: '2px', // [프로그레스 바 height] 기본값 : 3px
     progressTrack: '#000', // [프로그레스 바 배경색] 기본값 : #000
-    progressFill: '#f00', // [프로그레스 바 채움색] 기본값 : #fff
+    progressFill: '#276ff7', // [프로그레스 바 채움색] 기본값 : #fff
     
     dotSize: '6px', //  [Dot 크기] 기본값 : 5px
     dotColor: '#276ff7', // [Dot, Circle 활성화 색상] 기본값 : #f00
@@ -111,7 +117,7 @@
 
 
           <li>
-            <h2>[적용예시] dots 및 play/pause 버튼 출력</h2>
+            <h2>[적용예시01] dots 및 play/pause 버튼</h2>
             <div class="slide01 slick-app">
               <div class="item">
                 <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+dots+01" alt="">
@@ -128,6 +134,7 @@
             </div>
             <h3 class="demo__pre-type">Javascript</h3>
 <pre><code class="javascript">
+  // dots 및 play/pause 버튼
   $('.slick-nav').slickNav('.item',{
     dotSize: '6px', //  [Dot 크기] 기본값 : 5px
     dotColor: '#276ff7', // [Dot 활성화 색상] 기본값 : #f00
@@ -138,9 +145,39 @@
 </code></pre>
           </li>
 
+          <li>
+            <h2>[적용예시02] 프로그레스 바</h2>
+  
+            <div class="slide02 slick-app">
+              <div class="item">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+progress+bar+01" alt="">
+              </div>
+              <div class="item">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+progress+bar+02" alt="">
+              </div>
+              <div class="item">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+progress+bar+03" alt="">
+              </div>
+              <div class="item">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+progress+bar+04" alt="">
+              </div>
+            </div>
+            <h3 class="demo__pre-type">Javascript</h3>
+<pre><code class="javascript">
+  // 프로그레스 바
+  $('.slick-nav').slickNav('.item', {
+    progress: true, // [프로그레스 바 사용 유무] *Circle과 동시 사용 불가 
+    progressWidth: '150px', // [프로그레스 바 width] 기본값 : 150px
+    progressHeight: '2px', // [프로그레스 바 height] 기본값 : 3px
+    progressTrack: '#000', // [프로그레스 바 배경색] 기본값 : #000
+    progressFill: '#276ff7', // [프로그레스 바 채움색] 기본값 : #fff
+  });
+
+</code></pre>
+          </li>
 
           <li>
-            <h2>[적용예시] dots animation</h2>
+            <h2>[적용예시03] dots 애니메이션</h2>
   
             <div class="slide03 slick-app">
               <div class="item">
@@ -158,6 +195,7 @@
             </div>
             <h3 class="demo__pre-type">Javascript</h3>
 <pre><code class="javascript">
+  // dots 애니메이션
   $('.slick-nav').slickNav('.item', {
     circle: true, // [Circle 애니메이션 사용 유무] 기본값 : false. 아래 속성을 이용해 간단한 스타일 제어 * false 시 Dot만 출력
     circleSize: '32px', // [Circle 사이즈] 기본값 : 30px
@@ -170,24 +208,25 @@
           </li>
   
           <li>
-            <h2>[적용예시] control 버튼만 출력</h2>
+            <h2>[적용예시04] control 버튼만 출력</h2>
   
             <div class="slide04 slick-app">
               <div class="item">
-                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+nav+only+01" alt="">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+only+nav+01" alt="">
               </div>
               <div class="item">
-                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+nav+only+02" alt="">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+only+nav+02" alt="">
               </div>
               <div class="item">
-                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+nav+only+03" alt="">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+only+nav+03" alt="">
               </div>
               <div class="item">
-                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+nav+only+04" alt="">
+                <img src="https://via.placeholder.com/1200x300.jpg?text=Slick+only+nav+04" alt="">
               </div>
             </div>
             <h3 class="demo__pre-type">Javascript</h3>
 <pre><code class="javascript">
+  // control 버튼만 출력
   $('.slick-nav').slickNav('.item', {
     controlOnly: true, // [prev, pause, next 버튼만 출력] 기본값 : false
     duration: 5000, // 슬라이드 autoplay 시간과 동일한 값
@@ -256,7 +295,7 @@
         progressWidth: '150px',
         progressHeight: '2px',
         progressTrack: '#000',
-        progressFill: '#f00',
+        progressFill: '#276ff7',
       });
 
       /* ---------------------------------------------- */
