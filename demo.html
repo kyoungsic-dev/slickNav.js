@@ -91,6 +91,8 @@
 <pre><code class="javascript">
   // 전체 옵션
   $('.slick-nav').slickNav('.item', { // 실제 slide 되는 Node를 select
+    parentNode: '#parent-tag', // [append 시킬 부모 노드] 기본값 : false. * 값이 false 일 때 initialize 된 slick 노드가 부모 노드 (예시에서는 .slick-nav)
+    
     circle: false, // [Circle 애니메이션 사용 유무] 기본값 : false. 아래 속성을 이용해 간단한 스타일 제어   * false 시 Dot만 출력
     circleSize: '32px', // [Circle 사이즈] 기본값 : 30px
     circleBorder: '2px', // [Circle 테두리 굵기] 기본값: 1px
@@ -107,7 +109,8 @@
     dotDefaultColor: '#ccc', // [Dot, Circle 기본 색상] 기본값 : #ccc
 
 
-    controlOnly: false, // [prev, pause, next 버튼만 출력] 기본값 : false
+    controls: true, // [prev, pause/play, next 버튼 노출 여부 (true 시 노출)] 기본값 : true
+    controlsOnly: false, // [prev, pause/play, next 버튼만 출력] 기본값 : false
                       
     duration: 5000, // 슬라이드 autoplay 시간과 동일한 값
   });
@@ -140,6 +143,7 @@
     dotColor: '#276ff7', // [Dot 활성화 색상] 기본값 : #f00
     dotDefaultColor: '#ccc', // [Dot 기본 색상] 기본값 : #ccc
     duration: 5000, // 슬라이드 autoplay 시간과 동일한 값
+    controls: false, // [prev, pause/play, next 버튼 노출 여부 (true 시 노출)] 기본값 : true
   });
 
 </code></pre>
@@ -228,7 +232,7 @@
 <pre><code class="javascript">
   // control 버튼만 출력
   $('.slick-nav').slickNav('.item', {
-    controlOnly: true, // [prev, pause, next 버튼만 출력] 기본값 : false
+    controlsOnly: true, // [prev, pause, next 버튼만 출력] 기본값 : false
     duration: 5000, // 슬라이드 autoplay 시간과 동일한 값
   });
 
@@ -283,6 +287,7 @@
       slide01.slickNav('.item', {
         dotSize: '6px',
         dotColor: '#276ff7',
+        controls: false,
       });
 
 
@@ -316,7 +321,7 @@
       var slide04 = $('.slide04');
 
       slide04.slickNav('.item', {
-        controlOnly: true,
+        controlsOnly: true,
         duration: 5000,
       });
     })
